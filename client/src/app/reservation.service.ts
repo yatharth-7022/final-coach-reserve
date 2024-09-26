@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ReservationService {
-  private apiUrl = 'https://final-coach-reserve-client-ktft7q9af.vercel.app/'; //
+  private apiUrl = 'https://final-coach-reserve-client.vercel.app/'; //
 
   constructor(private http: HttpClient) {}
 
