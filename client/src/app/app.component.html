@@ -1,0 +1,53 @@
+<div id="main-container">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet"
+  />
+  <div id="header-container">
+    <div id="link-container">
+      <a
+        style="color: black"
+        href="https://github.com/yatharth-7022/coach-seat-booking"
+        >PROJECT GITHUB LINK <br />(contains sql code as well)</a
+      >
+    </div>
+    <h1>Train Seat Reservation</h1>
+  </div>
+
+  <div class="seat-selection-info">
+    <p>Selected seats: {{ selectedSeats.length }} / {{ maxSeats }}</p>
+  </div>
+
+  <div class="seat-container">
+    <div *ngFor="let row of seats; let i = index" class="seat-row">
+      <div
+        *ngFor="let seat of row; let j = index"
+        class="seat"
+        [ngClass]="getSeatClass(seat)"
+        (click)="toggleSeatSelection(seat)"
+      >
+        {{ seat.row }}{{ ["A", "B", "C", "D", "E", "F", "G"][seat.column - 1] }}
+      </div>
+    </div>
+  </div>
+
+  <div class="selected-seats-container">
+    <div id="selected-seats">
+      <h2>Your Seats</h2>
+      <p *ngIf="selectedSeats.length === 0">No seats selected</p>
+      <ul>
+        <li *ngFor="let seat of selectedSeats">
+          Seat {{ seat.row
+          }}{{ ["A", "B", "C", "D", "E", "F", "G"][seat.column - 1] }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="reserve-button-container">
+    <button (click)="reserveSeats()" [disabled]="selectedSeats.length === 0">
+      RESERVE SELECTED SEATS
+    </button>
+  </div>
+</div>

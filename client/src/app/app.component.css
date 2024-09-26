@@ -1,0 +1,196 @@
+#main-container {
+  height: fit-content;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("../assets/images/train.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.seat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 0 10px;
+}
+
+#header-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  position: relative;
+}
+#header-container h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  color: #343131;
+}
+#link-container {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  height: 50px;
+  width: fit-content;
+}
+#link-container a {
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.seat-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-weight: 600;
+  border: 0.5px solid black;
+}
+
+.seat:hover {
+  transform: scale(1.1);
+  color: white;
+  background-color: black !important;
+}
+
+.seat.available {
+  background-color: transparent;
+}
+
+.seat.selected {
+  background-color: #6a9c89;
+}
+.selected-seats-container {
+  width: 100%;
+  margin: 20px 0 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: fit-content;
+}
+#selected-seats h2 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 1.8rem;
+  color: white;
+}
+.selected-seats-container p {
+  margin: 0;
+  color: white;
+}
+#selected-seats {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: white;
+  width: 50%;
+  max-width: 700px;
+  margin: 20px auto;
+}
+#selected-seats p,
+#selected-seats li {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+ul {
+  padding-left: 10px;
+  gap: 10px;
+  color: white;
+  font-weight: 600;
+}
+.seat.reserved {
+  background-color: #a04747;
+  cursor: not-allowed;
+}
+
+.seat-selection-info {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.seat-selection-info P {
+  color: #343131;
+}
+
+@media screen and (max-width: 768px) {
+  .seat {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .seat {
+    width: 30px;
+    height: 30px;
+  }
+
+  #header-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .seat-selection-info p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .seat {
+    width: 25px;
+    height: 25px;
+  }
+
+  #header-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .seat-selection-info p {
+    font-size: 0.8rem;
+  }
+}
+#reserve-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#reserve-button-container button {
+  font-weight: 700;
+  background: linear-gradient(135deg, #962a25, #962a25);
+  color: #ffffff;
+  height: 3rem;
+  padding: 10px 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border: none;
+  border: 1px solid wheat;
+  font-weight: 800;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#reserve-button-container button:hover {
+  transform: scale(1.1);
+  background-color: transparent;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
