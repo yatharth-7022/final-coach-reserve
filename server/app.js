@@ -10,6 +10,8 @@ const corsOptions = {
   credentials: true, // Allow credentials if needed
 };
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // Handle preflight requests
+
 app.use(express.json());
 
 const pool = mysql.createPool({

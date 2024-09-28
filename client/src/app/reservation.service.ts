@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ReservationService {
-  private apiUrl = 'https://final-coach-reserve-client.vercel.app';
+  private apiUrl = 'https://final-coach-reserve-client.vercel.app/api';
 
   constructor(private http: HttpClient) {}
 
@@ -15,6 +15,14 @@ export class ReservationService {
   }
 
   reserveSeats(seatIds: number[]): Observable<any> {
-    return this.http.post(`${this.apiUrl}/reserve-seats`, { seatIds });
+    const headers = {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    };
+    return this.http.post(
+      `${this.apiUrl}/reserve-seats`,
+      { seatIds },
+      { headers }
+    );
   }
 }
