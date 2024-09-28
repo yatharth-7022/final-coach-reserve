@@ -7,9 +7,9 @@ app.use(cors());
 app.use(express.json());
 
 const pool = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "yatharth7112002",
+  host: "coach-reservation-database.mysql.database.azure.com",
+  user: "adminuser",
+  password: "azure@#$12345",
   database: "train_reservation",
   waitForConnections: true,
   connectionLimit: 10,
