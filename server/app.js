@@ -5,9 +5,8 @@ const cors = require("cors");
 const app = express();
 const corsOptions = {
   origin: "https://newproj-mauve.vercel.app", // Allow your front-end domain
-  methods: "GET,POST,PUT,DELETE", // Allow the necessary HTTP methods
-  allowedHeaders: "Content-Type,Authorization", // Allow specific headers
-  credentials: true, // Allow credentials if needed
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow the necessary HTTP methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
 };
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions)); // Handle preflight requests

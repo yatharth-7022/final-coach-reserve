@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { APP_CONFIG, appConfig } from './app.config';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
-  declarations: [HelloComponent],
+  declarations: [AppComponent],
+  imports: [BrowserModule, HttpClientModule],
+  providers: [{ provide: APP_CONFIG, useValue: appConfig }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
