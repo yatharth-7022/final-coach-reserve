@@ -5,8 +5,7 @@ import { AppComponent } from './app.component';
 import { APP_CONFIG, appConfig } from './app.config';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule, AppComponent],
   providers: [{ provide: APP_CONFIG, useValue: appConfig }],
   bootstrap: [AppComponent],
 })
