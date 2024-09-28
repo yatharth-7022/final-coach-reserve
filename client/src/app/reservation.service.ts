@@ -11,6 +11,7 @@ export class ReservationService {
   constructor(private http: HttpClient) {}
 
   getReservedSeats(): Observable<number[]> {
+    console.log('Fetching reserved seats...'); // Add this line
     return this.http.get<number[]>(`${this.apiUrl}/reserved-seats`);
   }
 
