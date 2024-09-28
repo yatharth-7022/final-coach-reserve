@@ -15,14 +15,6 @@ export class ReservationService {
   }
 
   reserveSeats(seatIds: number[]): Observable<any> {
-    const headers = {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-    };
-    return this.http.post(
-      `${this.apiUrl}/reserve-seats`,
-      { seatIds },
-      { headers }
-    );
+    return this.http.post(`${this.apiUrl}/reserve-seats`, { seatIds });
   }
 }
